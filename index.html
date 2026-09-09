@@ -3,404 +3,1301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishakha Verma | Web Developer Portfolio</title>
+
+    <meta name="description" content="Vishakha Verma — Full Stack Web Developer and SEO & Digital Marketing Executive specializing in website design, development, WordPress, APIs, SEO, performance optimization and digital marketing.">
+
+    <meta name="keywords" content="Vishakha Verma, Full Stack Web Developer, Web Developer, Web Designer, SEO Executive, Digital Marketing Executive, WordPress Developer, PHP Developer, JavaScript Developer, CPaaS, API Integration">
+
+    <meta name="author" content="Vishakha Verma">
+
+    <title>Vishakha Verma | Full Stack Web Developer | SEO & Digital Marketing</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* --- CSS VARIABLES & THEME --- */
-        :root {
-            --primary: #6A0DAD;      /* Royal Purple */
-            --secondary: #3F8CFF;    /* Electric Blue */
-            --cpaas: #00e5ff;        /* Cyan for Tech/CPaaS */
-            --fintech: #2ecc71;      /* Green for Fintech */
-            --dark: #0f172a;         
-            --text: #334155;
-            --white: #ffffff;
-            --gradient: linear-gradient(135deg, #6A0DAD 0%, #3F8CFF 100%);
-            --card-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
-        }
 
-        html { scroll-behavior: smooth; }
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text);
-            background-color: #f8fafc;
-            margin: 0;
-            line-height: 1.6;
-        }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--dark); }
-        a { text-decoration: none; transition: 0.3s; }
-        ul { list-style: none; padding: 0; }
-
-        /* --- LAYOUT UTILITIES --- */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        section { padding: 80px 0; }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            margin-bottom: 60px;
-            color: #64748b;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            min-height: 100vh;
-            background: var(--dark);
-            background-image: radial-gradient(circle at 10% 20%, rgba(63, 140, 255, 0.2) 0%, transparent 20%),
-                              radial-gradient(circle at 90% 80%, rgba(106, 13, 173, 0.2) 0%, transparent 20%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            background: linear-gradient(to right, #fff, #a5b4fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-            color: white; 
-        }
-
-        .hero h2 {
-            color: #94a3b8;
-            font-weight: 400;
-            font-size: 1.5rem;
-            font-family: 'Poppins', sans-serif;
-            margin-bottom: 30px;
-        }
-
-        .hero-btn {
-            background: var(--gradient);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 0 20px rgba(63, 140, 255, 0.5);
-            display: inline-block;
-        }
-        .hero-btn:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(63, 140, 255, 0.8); }
-
-        /* --- EXPERIENCE TIMELINE --- */
-        .timeline-container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .timeline-container::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: #e2e8f0;
-        }
-
-        .timeline-card {
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            margin-left: 60px;
-            margin-bottom: 40px;
-            box-shadow: var(--card-shadow);
-            position: relative;
-            border-left: 5px solid var(--secondary);
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: -51px;
-            top: 30px;
-            width: 20px;
-            height: 20px;
-            background: var(--secondary);
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 0 0 3px #bfdbfe;
-        }
-
-        /* --- PROJECT GRID --- */
-        .category-header {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin: 40px 0 20px;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            position: relative;
-            border-top: 4px solid transparent;
-        }
-
-        /* Type Colors */
-        .project-card.cpaas { border-top-color: var(--cpaas); }
-        .project-card.fintech { border-top-color: var(--fintech); }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px -10px rgba(106, 13, 173, 0.2);
-        }
-
-        .card-thumb {
-            height: 200px;
-            background-color: #e2e8f0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s;
-        }
-        
-        .project-card:hover .card-thumb img { transform: scale(1.1); }
-
-        .card-body { padding: 25px; }
-
-        .card-tag {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 4px;
-        }
-        
-        .tag-cpaas { background: #e0faff; color: #00acc1; }
-        .tag-fintech { background: #e8f5e9; color: #2e7d32; }
-
-        .card-title { font-size: 1.25rem; margin: 0 0 10px 0; color: var(--dark); }
-        .card-desc { font-size: 0.9rem; color: #64748b; margin-bottom: 20px; }
-
-        .btn-visit {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background: #f1f5f9;
-            color: var(--dark);
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        .btn-visit:hover { background: var(--dark); color: white; }
-
-        /* --- CONTACT --- */
-        .contact-section {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .timeline-container::before { left: 10px; }
-            .timeline-card { margin-left: 35px; padding: 20px; }
-            .timeline-dot { left: -34px; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header class="hero">
-        <div class="container">
-            <div style="margin-bottom: 20px;">
-                <img src="https://ui-avatars.com/api/?name=Vishakha+Verma&background=6A0DAD&color=fff&size=150" 
-                     alt="Vishakha" 
-                     style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid rgba(255,255,255,0.3); box-shadow: 0 0 30px rgba(106, 13, 173, 0.6);">
-            </div>
-            <h1>Vishakha Verma</h1>
-            <h2>Web Developer & Designer</h2>
-            <p style="max-width: 600px; margin: 0 auto 30px; opacity: 0.8;">
-                Bridging the gap between complex functionality and beautiful design.
-                Specializing in CPaaS architectures and Fintech solutions.
-            </p>
-            <a href="#projects" class="hero-btn">View Featured Work</a>
+    <!-- Header -->
+
+    <header class="topbar">
+        <div class="wrap topbar-inner">
+
+            <a class="logo" href="#home">
+                <span class="logo-mark">VV</span>
+                <span>Vishakha Verma</span>
+            </a>
+
+            <button class="menu" id="menuButton" aria-label="Open menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="nav" id="navigation">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact" class="nav-button">Let's Talk</a>
+            </nav>
+
         </div>
     </header>
 
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Professional Journey</h2>
-            <div class="timeline-container">
-                
-                <div class="timeline-card">
-                    <div class="timeline-dot"></div>
-                    <h3 style="margin: 0 0 5px 0;">Orbitel.in</h3>
-                    <div style="font-size: 0.85rem; color: var(--secondary); font-weight:700; margin-bottom:10px;">
-                        PRESENT · WEB DEVELOPER
-                    </div>
-                    <p style="margin: 0; font-size: 0.9rem; color: #475569;">
-                        Leading the frontend development for a major CPaaS provider. Optimized landing pages for high-volume API traffic and branding consistency.
+
+    <main>
+
+        <!-- Hero -->
+
+        <section class="intro" id="home">
+
+            <div class="wrap intro-inner">
+
+                <div class="intro-content fade">
+
+                    <small>
+                        Full Stack Web Development · SEO · Digital Marketing
+                    </small>
+
+                    <h1>
+                        I design and build websites that
+                        <span>look good</span>, perform well and get found.
+                    </h1>
+
+                    <p class="intro-text">
+                        I'm Vishakha Verma, a Full Stack Web Developer and SEO & Digital Marketing Executive
+                        with 3+ years of experience in website design, development, WordPress, APIs,
+                        technical SEO, performance optimization and digital marketing.
                     </p>
+
+                    <div class="buttons">
+
+                        <a href="#projects" class="button primary">
+                            View My Work
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <a href="#contact" class="button outline">
+                            Get In Touch
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="intro-note">
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            India
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-palette"></i>
+                            Design + Development
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-chart-line"></i>
+                            SEO + Marketing
+                        </span>
+
+                    </div>
+
                 </div>
 
-                <div class="timeline-card" style="border-left-color: var(--primary);">
-                    <div class="timeline-dot" style="background: var(--primary);"></div>
-                    <h3 style="margin: 0 0 5px 0;">Biocipher.in</h3>
-                    <div style="font-size: 0.85rem; color: var(--primary); font-weight:700; margin-bottom:10px;">
-                        WEB DESIGNER
+
+                <div class="intro-box fade">
+
+                    <div class="box-top">
+                        <span>WHAT I WORK ON</span>
+
+                        <span class="status">
+                            <i class="fa-solid fa-circle"></i>
+                            ACTIVE
+                        </span>
                     </div>
-                    <p style="margin: 0; font-size: 0.9rem; color: #475569;">
-                        Designed UI layouts and created engaging web graphics for biotechnology services.
+
+                    <div class="intro-number">
+                        3<span>+</span>
+                    </div>
+
+                    <p>
+                        Years of hands-on experience across development,
+                        design, SEO, digital marketing and web applications.
                     </p>
+
+                    <div class="skills-list">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>WordPress</span>
+                        <span>APIs</span>
+                        <span>SEO</span>
+                        <span>Meta Ads</span>
+                        <span>Google Ads</span>
+                    </div>
+
                 </div>
 
-                <div class="timeline-card" style="border-left-color: #64748b;">
-                    <div class="timeline-dot" style="background: #64748b; border-color: #e2e8f0; box-shadow: none;"></div>
-                    <h3 style="margin: 0 0 5px 0;">Pansofic</h3>
-                    <div style="font-size: 0.85rem; color: #64748b; font-weight:700; margin-bottom:10px;">
-                        EARLY CAREER · WEB DEVELOPER
-                    </div>
-                    <p style="margin: 0; font-size: 0.9rem; color: #475569;">
-                        Mastered HTML/CSS foundations, responsive page development, and basic PHP/MySQL integrations.
+            </div>
+
+        </section>
+
+
+        <!-- Quick Facts -->
+
+        <div class="facts">
+
+            <div class="wrap facts-grid">
+
+                <div class="fact">
+                    <strong>3+</strong>
+                    <span>Years of Experience</span>
+                </div>
+
+                <div class="fact">
+                    <strong>Full Stack</strong>
+                    <span>Web Development</span>
+                </div>
+
+                <div class="fact">
+                    <strong>SEO</strong>
+                    <span>Technical + On-Page</span>
+                </div>
+
+                <div class="fact">
+                    <strong>CMS + APIs</strong>
+                    <span>Websites & Applications</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- About -->
+
+        <section id="about">
+
+            <div class="wrap about">
+
+                <div class="heading fade">
+
+                    <span class="label">
+                        01 / About Me
+                    </span>
+
+                    <h2>
+                        I work across the complete digital workflow.
+                    </h2>
+
+                </div>
+
+
+                <div class="about-copy fade">
+
+                    <p class="lead">
+                        Development is only one part of what I do.
+                        I also design the experience, optimize the website
+                        and work on the digital visibility behind it.
                     </p>
+
+                    <p>
+                        My work includes designing and developing responsive websites,
+                        landing pages, business websites and web applications. I work with
+                        HTML, CSS, JavaScript, Bootstrap, PHP, MySQL, Firebase/Firestore
+                        and REST APIs.
+                    </p>
+
+                    <p>
+                        I also build and maintain WordPress and CMS-based websites,
+                        configure themes and plugins, work on multilingual websites,
+                        improve website performance and handle technical and on-page SEO.
+                    </p>
+
+                    <p>
+                        On the digital marketing side, I work with Google Search Console,
+                        Google Business Profile, Meta Ads, Google Ads, social media management,
+                        lead generation, campaign optimization and creative design.
+                    </p>
+
+                    <ul class="check-list">
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Website UI design and responsive development
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            WordPress, CMS, themes, plugins and website maintenance
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            PHP, MySQL, Firebase, Firestore and API integrations
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Technical SEO, indexing, schema, sitemap and Core Web Vitals
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Digital marketing, social media and lead-generation campaigns
+                        </li>
+
+                    </ul>
+
                 </div>
 
             </div>
+
+        </section>
+
+
+        <!-- Experience -->
+
+        <section class="experience" id="experience">
+
+            <div class="wrap">
+
+                <div class="heading center fade">
+
+                    <span class="label">
+                        02 / Experience
+                    </span>
+
+                    <h2>
+                        Professional Journey
+                    </h2>
+
+                    <p>
+                        My experience across development, design, SEO and digital marketing.
+                    </p>
+
+                </div>
+
+
+                <div class="work-list">
+
+                    <article class="work-item fade">
+
+                        <div class="work-date">
+                            JUL 2025 — PRESENT
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Adept Services Private Ltd
+
+                                <span class="current">
+                                    <i class="fa-solid fa-circle"></i>
+                                    Current
+                                </span>
+                            </h3>
+
+                            <div class="work-role">
+                                Web Developer | SEO & Digital Marketing Executive
+                            </div>
+
+                            <ul>
+
+                                <li>
+                                    Design, develop and maintain responsive websites and landing pages using
+                                    HTML5, CSS3, JavaScript, Bootstrap, PHP and MySQL.
+                                </li>
+
+                                <li>
+                                    Create dynamic forms and backend-connected components using
+                                    Firebase/Firestore and REST API integrations.
+                                </li>
+
+                                <li>
+                                    Build and maintain WordPress websites, configure themes and plugins,
+                                    add multilingual features and improve website functionality.
+                                </li>
+
+                                <li>
+                                    Handle technical and on-page SEO including XML sitemaps,
+                                    robots.txt, URL optimization, schema markup and image optimization.
+                                </li>
+
+                                <li>
+                                    Work with Google Search Console, Google Business Profile and Core Web Vitals
+                                    to improve search visibility and website performance.
+                                </li>
+
+                                <li>
+                                    Optimize website speed through responsive layouts, minification,
+                                    lazy loading and other performance improvements.
+                                </li>
+
+                                <li>
+                                    Manage social media content, creative assets and digital campaigns,
+                                    including Meta Ads and Google Ads support.
+                                </li>
+
+                                <li>
+                                    Work on SMS, WhatsApp Business API, Voice, Email and RCS marketing
+                                    proposals and support CPaaS-related API troubleshooting.
+                                </li>
+
+                                <li>
+                                    Handle website design, content presentation, landing page creation
+                                    and digital assets using Canva and Adobe Photoshop.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="work-item fade">
+
+                        <div class="work-date">
+                            MAY 2024 — JUN 2025
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Biocipher Technologies, Gurugram
+                            </h3>
+
+                            <div class="work-role">
+                                Web Developer & Designer
+                            </div>
+
+                            <ul>
+
+                                <li>
+                                    Created user interfaces and navigation systems with a focus on
+                                    usability, visual consistency and responsive layouts.
+                                </li>
+
+                                <li>
+                                    Built and maintained web pages using HTML, CSS, JavaScript
+                                    and responsive frameworks.
+                                </li>
+
+                                <li>
+                                    Designed website graphics, banners and social media creatives
+                                    using Canva and Adobe Photoshop.
+                                </li>
+
+                                <li>
+                                    Integrated multimedia content and optimized pages for performance
+                                    and faster loading.
+                                </li>
+
+                                <li>
+                                    Supported debugging, testing, deployment and development of
+                                    internal tools and product landing pages.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="work-item fade">
+
+                        <div class="work-date">
+                            MAR 2023 — APR 2024
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Pansofic Solutions, Ambala
+                            </h3>
+
+                            <div class="work-role">
+                                Web Developer Intern
+                            </div>
+
+                            <ul>
+
+                                <li>
+                                    Assisted in developing responsive websites using HTML,
+                                    CSS, JavaScript and Bootstrap.
+                                </li>
+
+                                <li>
+                                    Worked with PHP and MySQL for forms, data handling
+                                    and basic dynamic functionality.
+                                </li>
+
+                                <li>
+                                    Converted UI/UX wireframes into responsive front-end layouts
+                                    with senior developer guidance.
+                                </li>
+
+                                <li>
+                                    Worked on debugging, cross-browser testing and responsive
+                                    testing across desktop and mobile devices.
+                                </li>
+
+                                <li>
+                                    Improved page performance, loading speed and overall
+                                    website usability.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Skills -->
+
+        <section class="skills" id="skills">
+
+            <div class="wrap">
+
+                <div class="heading center fade">
+
+                    <span class="label">
+                        03 / Skills
+                    </span>
+
+                    <h2>
+                        What I work with
+                    </h2>
+
+                    <p>
+                        A practical toolkit covering development, design, SEO,
+                        marketing, CMS and web applications.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-grid">
+
+                    <div class="skill-box fade">
+
+                        <h3>
+                            <i class="fa-solid fa-code"></i>
+                            Web Development
+                        </h3>
+
+                        <div class="skill-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                            <span>jQuery</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>Firebase</span>
+                            <span>Firestore</span>
+                            <span>REST API</span>
+                            <span>Responsive Web Design</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-box fade">
+
+                        <h3>
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            SEO & Performance
+                        </h3>
+
+                        <div class="skill-tags">
+                            <span>Technical SEO</span>
+                            <span>On-Page SEO</span>
+                            <span>Google Search Console</span>
+                            <span>Google Business Profile</span>
+                            <span>XML Sitemap</span>
+                            <span>Robots.txt</span>
+                            <span>Schema Markup</span>
+                            <span>Core Web Vitals</span>
+                            <span>URL Optimization</span>
+                            <span>Speed Optimization</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-box fade">
+
+                        <h3>
+                            <i class="fa-solid fa-bullhorn"></i>
+                            Digital Marketing
+                        </h3>
+
+                        <div class="skill-tags">
+                            <span>Meta Ads Manager</span>
+                            <span>Google Ads</span>
+                            <span>Social Media Management</span>
+                            <span>Lead Generation</span>
+                            <span>Campaign Optimization</span>
+                            <span>Content Planning</span>
+                            <span>Creative Development</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-box fade">
+
+                        <h3>
+                            <i class="fa-solid fa-pen-ruler"></i>
+                            CMS, Design & Tools
+                        </h3>
+
+                        <div class="skill-tags">
+                            <span>WordPress</span>
+                            <span>Elementor</span>
+                            <span>WooCommerce</span>
+                            <span>Canva</span>
+                            <span>Adobe Photoshop</span>
+                            <span>Git</span>
+                            <span>GitHub</span>
+                            <span>VS Code</span>
+                            <span>Plugin Configuration</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Projects -->
+
+        <section class="projects" id="projects">
+
+            <div class="wrap">
+
+                <div class="heading center fade">
+
+                    <span class="label">
+                        04 / Selected Work
+                    </span>
+
+                    <h2>
+                        Websites, applications & digital projects
+                    </h2>
+
+                    <p>
+                        Projects where I have worked across design, development,
+                        optimization and digital experience.
+                    </p>
+
+                </div>
+
+
+                <!-- Poweronic -->
+
+                <div class="project-section-title">
+                    <i class="fa-solid fa-flask"></i>
+                    Current Website Project
+                </div>
+
+
+                <article class="featured fade">
+
+                    <div class="featured-image">
+
+                        <img
+                            src="assets/poweronic-localhost.png"
+                            alt="Poweronic Lab website redesign"
+                        >
+
+                    </div>
+
+
+                    <div class="featured-body">
+
+                        <span class="label">
+                            CMS WEBSITE · DESIGN + DEVELOPMENT
+                        </span>
+
+                        <h3>
+                            Poweronic Test & Research Centre
+                        </h3>
+
+                        <p>
+                            I am currently working on the complete updation and redesign
+                            of the Poweronic Lab website. The project involves redesigning
+                            the website experience, improving page structure and presentation,
+                            creating responsive layouts, refining content sections and
+                            working on SEO and website performance.
+                        </p>
+
+                        <div class="tags">
+                            <span>CMS</span>
+                            <span>UI Design</span>
+                            <span>Development</span>
+                            <span>Responsive</span>
+                            <span>SEO</span>
+                            <span>Performance</span>
+                        </div>
+
+                        <a
+                            class="visit"
+                            href="https://www.poweroniclab.com/"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            View Current Website
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- WhatsApp Application -->
+
+                <div class="project-section-title">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Application Development
+                </div>
+
+
+                <article class="application fade">
+
+                    <div class="application-side">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        <span class="label">
+                            ONGOING APPLICATION PROJECT
+                        </span>
+
+                        <h3>
+                            Unofficial WhatsApp Panel
+                        </h3>
+
+                        <p>
+                            A complete application-based project focused on
+                            WhatsApp communication and API-driven functionality.
+                        </p>
+
+                    </div>
+
+
+                    <div class="application-body">
+
+                        <span class="working">
+                            <i class="fa-solid fa-circle"></i>
+                            Currently Working On
+                        </span>
+
+                        <h4>
+                            WhatsApp Communication Panel
+                        </h4>
+
+                        <p>
+                            I am currently working on an unofficial WhatsApp panel
+                            as a complete application-based project using
+                            Evolution API. The project involves application UI,
+                            API integration, communication workflows and
+                            backend-connected functionality rather than being
+                            limited to a normal marketing website.
+                        </p>
+
+                        <div class="application-list">
+
+                            <span>Application UI</span>
+                            <span>Evolution API</span>
+                            <span>API Integration</span>
+                            <span>WhatsApp Messaging</span>
+                            <span>Communication Workflows</span>
+                            <span>Backend Integration</span>
+                            <span>Dashboard Development</span>
+                            <span>Ongoing Development</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CPaaS -->
+
+                <div class="project-section-title">
+                    <i class="fa-solid fa-network-wired"></i>
+                    CPaaS & Communication Technology
+                </div>
+
+
+                <div class="project-grid">
+
+                    <article class="project fade">
+
+                        <div class="project-image">
+
+                            <img
+                                src="assets/orbitel.png"
+                                alt="Orbitel CPaaS website"
+                            >
+
+                            <span class="label-tag">
+                                CPaaS
+                            </span>
+
+                        </div>
+
+                        <div class="project-body">
+
+                            <h3>
+                                Orbitel
+                            </h3>
+
+                            <div class="project-role">
+                                Website Design + Development
+                            </div>
+
+                            <p>
+                                Designed and developed a corporate CPaaS website
+                                covering SMS, WhatsApp, Voice, RCS and Email
+                                communication solutions.
+                            </p>
+
+                            <a
+                                class="visit"
+                                href="https://orbitel.in"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                Visit Site
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="project fade">
+
+                        <div class="project-image">
+
+                            <img
+                                src="assets/pixabits.png"
+                                alt="Pixabits website"
+                            >
+
+                            <span class="label-tag">
+                                CPaaS
+                            </span>
+
+                        </div>
+
+                        <div class="project-body">
+
+                            <h3>
+                                Pixabits
+                            </h3>
+
+                            <div class="project-role">
+                                Website Design + Development
+                            </div>
+
+                            <p>
+                                Designed and developed a digital solutions website
+                                focused on communication technology, product
+                                presentation and software integrations.
+                            </p>
+
+                            <a
+                                class="visit"
+                                href="https://www.pixabits.in"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                Visit Site
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="project fade">
+
+                        <div class="project-image">
+
+                            <img
+                                src="assets/conecsy.png"
+                                alt="Conecsy CPaaS website"
+                            >
+
+                            <span class="label-tag">
+                                CPaaS
+                            </span>
+
+                        </div>
+
+                        <div class="project-body">
+
+                            <h3>
+                                Conecsy
+                            </h3>
+
+                            <div class="project-role">
+                                Website Design + Development
+                            </div>
+
+                            <p>
+                                Designed and developed the website for Conecsy,
+                                a CPaaS company focused on business communication
+                                and customer engagement solutions.
+                            </p>
+
+                            <a
+                                class="visit"
+                                href="https://conecsy.com/"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                Visit Site
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- Other Projects -->
+
+                <div class="project-section-title">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Business, Fintech & E-commerce
+                </div>
+
+
+                <div class="project-grid">
+
+                    <article class="project fade">
+
+                        <div class="project-image">
+
+                            <img
+                                src="assets/dollar.png"
+                                alt="Dollar24 website"
+                            >
+
+                            <span class="label-tag">
+                                Fintech
+                            </span>
+
+                        </div>
+
+                        <div class="project-body">
+
+                            <h3>
+                                Dollar24
+                            </h3>
+
+                            <div class="project-role">
+                                Website Design + Development
+                            </div>
+
+                            <p>
+                                Financial services website with structured
+                                information, user-focused flows and
+                                lead-generation elements.
+                            </p>
+
+                            <a
+                                class="visit"
+                                href="https://dollar24.co.in"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                Visit Site
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="project fade">
+
+                        <div class="project-image">
+
+                            <img
+                                src="assets/v4u.png"
+                                alt="V4U Services website"
+                            >
+
+                            <span class="label-tag">
+                                Business
+                            </span>
+
+                        </div>
+
+                        <div class="project-body">
+
+                            <h3>
+                                V4U Services
+                            </h3>
+
+                            <div class="project-role">
+                                Website Design + Development
+                            </div>
+
+                            <p>
+                                Service-focused business website designed around
+                                clear service presentation, enquiry forms and
+                                lead-generation journeys.
+                            </p>
+
+                            <a
+                                class="visit"
+                                href="https://v4uservices.com/"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                Visit Site
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="project fade">
+
+                        <div class="project-image">
+
+                            <img
+                                src="assets/spaceheight.png"
+                                alt="Space Height website"
+                            >
+
+                            <span class="label-tag">
+                                Real Estate
+                            </span>
+
+                        </div>
+
+                        <div class="project-body">
+
+                            <h3>
+                                Space Height
+                            </h3>
+
+                            <div class="project-role">
+                                Website Design + Development
+                            </div>
+
+                            <p>
+                                Real-estate and investment-focused website with
+                                structured content and a business-oriented
+                                user journey.
+                            </p>
+
+                            <a
+                                class="visit"
+                                href="https://www.spaceheight.co.in/"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                Visit Site
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="project fade">
+
+                        <div class="project-image">
+
+                            <img
+                                src="assets/ssc.png"
+                                alt="Shreshrey Cards website"
+                            >
+
+                            <span class="label-tag">
+                                E-commerce
+                            </span>
+
+                        </div>
+
+                        <div class="project-body">
+
+                            <h3>
+                                Shreshrey Cards
+                            </h3>
+
+                            <div class="project-role">
+                                Website Design + Development
+                            </div>
+
+                            <p>
+                                Product-focused e-commerce website with product
+                                presentation, payment integration and
+                                checkout-oriented flows.
+                            </p>
+
+                            <a
+                                class="visit"
+                                href="https://www.shreshreycards.com/"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                Visit Site
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Education -->
+
+        <section class="education">
+
+            <div class="wrap">
+
+                <div class="heading center fade">
+
+                    <span class="label">
+                        05 / Education
+                    </span>
+
+                    <h2>
+                        Education & Background
+                    </h2>
+
+                </div>
+
+
+                <div class="education-list fade">
+
+                    <div class="education-item">
+
+                        <strong>
+                            B.Tech (Electronics & Communication)
+                        </strong>
+
+                        <span>
+                            Chandigarh Group of Colleges, Mohali · 2017–2021
+                        </span>
+
+                    </div>
+
+
+                    <div class="education-item">
+
+                        <strong>
+                            High School
+                        </strong>
+
+                        <span>
+                            The SD Vidya School, Ambala Cantt · 2016–2017
+                        </span>
+
+                    </div>
+
+
+                    <div class="education-item">
+
+                        <strong>
+                            Intermediate
+                        </strong>
+
+                        <span>
+                            The SD Vidya School, Ambala Cantt · 2014–2015
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Contact -->
+
+        <section class="contact" id="contact">
+
+            <div class="wrap fade">
+
+                <span class="label">
+                    06 / Contact
+                </span>
+
+                <h2>
+                    Let's build something useful, fast and professional.
+                </h2>
+
+                <p>
+                    For website design and development, redesigns, WordPress/CMS work,
+                    SEO, API-based applications or digital marketing projects,
+                    feel free to get in touch.
+                </p>
+
+
+                <div class="buttons contact-buttons">
+
+                    <a
+                        class="button primary"
+                        href="mailto:vishiverma1111@gmail.com"
+                    >
+                        Email Me
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+
+                    <a
+                        class="button outline"
+                        href="tel:+918740423668"
+                    >
+                        Call Me
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="contact-info">
+
+                    <a href="mailto:vishiverma1111@gmail.com">
+                        <i class="fa-regular fa-envelope"></i>
+                        vishiverma1111@gmail.com
+                    </a>
+
+                    <a href="tel:+918740423668">
+                        <i class="fa-solid fa-phone"></i>
+                        +91 8740423668
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="wrap">
+            © <span id="year"></span> Vishakha Verma · Web Developer | SEO & Digital Marketing
         </div>
-    </section>
 
-    <section id="projects" style="background: white;">
-        <div class="container">
-            <h2 class="section-title">Selected Projects</h2>
-            <p class="section-subtitle">A collection of CPaaS platforms and Fintech solutions built for performance and scale.</p>
-
-            <div class="category-header"><i class="fas fa-network-wired"></i> CPaaS & Technology</div>
-            <div class="projects-grid">
-                
-                <div class="project-card cpaas">
-                    <div class="card-thumb">
-                        <img src="https://picsum.photos/seed/code/600/400" alt="Orbitel Website UI">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-tag tag-cpaas">CPaaS Provider</span>
-                        <h3 class="card-title">Orbitel</h3>
-                        <p class="card-desc">A comprehensive Communication Platform as a Service (CPaaS) website offering API solutions for voice and messaging.</p>
-                        <a href="https://orbitel.in" target="_blank" class="btn-visit">Visit Site <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="project-card cpaas">
-                    <div class="card-thumb">
-                        <img src="https://picsum.photos/seed/circuit/600/400" alt="Pixabits Platform">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-tag tag-cpaas">CPaaS & Digital</span>
-                        <h3 class="card-title">Pixabits</h3>
-                        <p class="card-desc">A modern digital solutions platform focusing on communication technologies and software integration.</p>
-                        <a href="https://www.pixabits.in" target="_blank" class="btn-visit">Visit Site <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="category-header"><i class="fas fa-chart-line"></i> Fintech & Financial Services</div>
-            <div class="projects-grid">
-
-                <div class="project-card fintech">
-                    <div class="card-thumb">
-                        <img src="https://picsum.photos/seed/charts/600/400" alt="Dollar24">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-tag tag-fintech">Fintech</span>
-                        <h3 class="card-title">Dollar24</h3>
-                        <p class="card-desc">A secure financial services platform designed to provide quick loans and investment tracking for users.</p>
-                        <a href="https://dollar24.co.in" target="_blank" class="btn-visit">Visit Site <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="project-card fintech">
-                    <div class="card-thumb">
-                        <img src="https://picsum.photos/seed/stockmarket/600/400" alt="V4U">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-tag tag-fintech">Fintech Consultancy</span>
-                        <h3 class="card-title">V4U Services</h3>
-                        <p class="card-desc">Corporate financial consultancy website featuring service breakdowns and lead generation forms.</p>
-                        <a href="https://v4uservices.com/" target="_blank" class="btn-visit">Visit Site <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="project-card fintech">
-                    <div class="card-thumb">
-                        <img src="https://picsum.photos/seed/data/600/400" alt="Space Height">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-tag tag-fintech">Fintech / Real Estate</span>
-                        <h3 class="card-title">Space Height</h3>
-                        <p class="card-desc">Investment and property management platform focusing on the financial aspects of real estate.</p>
-                        <a href="https://www.spaceheight.co.in/" target="_blank" class="btn-visit">Visit Site <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                 <div class="project-card fintech">
-                    <div class="card-thumb">
-                        <img src="https://picsum.photos/seed/transactions/600/400" alt="Shreshrey">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-tag tag-fintech">Fintech & E-Commerce</span>
-                        <h3 class="card-title">Shreshrey Cards</h3>
-                        <p class="card-desc">Digital payment-integrated platform tailored for high-volume transactions and product showcases.</p>
-                        <a href="https://www.shreshreycards.com/" target="_blank" class="btn-visit">Visit Site <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <footer class="contact-section">
-        <div class="container">
-            <h2>Let’s Work on Something Awesome!</h2>
-            <p style="margin-bottom: 30px; opacity: 0.8;">Available for freelance projects and collaborations.</p>
-            <div style="font-size: 1.2rem; margin-bottom: 20px;">
-                <i class="fas fa-envelope"></i> your-email@example.com
-            </div>
-            <p style="font-size: 0.9rem; opacity: 0.5;">© 2025 Vishakha Verma. All Rights Reserved.</p>
-        </div>
     </footer>
+
+
+    <script>
+
+        const menuButton = document.getElementById("menuButton");
+        const navigation = document.getElementById("navigation");
+
+        menuButton.addEventListener("click", function () {
+
+            const open = navigation.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", open);
+
+            menuButton.innerHTML = open
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+
+        });
+
+
+        document.querySelectorAll(".nav a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navigation.classList.remove("open");
+
+                menuButton.setAttribute("aria-expanded", "false");
+
+                menuButton.innerHTML =
+                    '<i class="fa-solid fa-bars"></i>';
+
+            });
+
+        });
+
+
+        const fadeItems = document.querySelectorAll(".fade");
+
+        const observer = new IntersectionObserver(function (entries, observerInstance) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                    observerInstance.unobserve(entry.target);
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.12
+        });
+
+
+        fadeItems.forEach(function (item) {
+            observer.observe(item);
+        });
+
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
 
 </body>
 </html>
