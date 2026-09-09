@@ -1203,3 +1203,111 @@ footer {
         transition: none !important;
     }
 }
+.featured-image {
+    position: relative;
+    min-height: 520px;
+    overflow: hidden;
+    background: #111827;
+    border-radius: 18px;
+}
+
+.browser-bar {
+    height: 42px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: #e9ebef;
+    border-bottom: 1px solid #d5d8dd;
+    position: relative;
+    z-index: 3;
+}
+
+.browser-bar span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #8b8f96;
+}
+
+.browser-bar small {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    color: #666;
+    padding: 6px 30px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.website-preview {
+    position: absolute;
+    top: 42px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 42px);
+    overflow: hidden;
+    background: #fff;
+}
+
+.website-preview iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    border: 0;
+    transform: scale(0.5);
+    transform-origin: top left;
+}
+
+.preview-badge {
+    position: absolute;
+    left: 22px;
+    bottom: 22px;
+    z-index: 5;
+    padding: 9px 14px;
+    background: rgba(10, 18, 32, 0.88);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+}
+@media (max-width: 768px) {
+    .featured-image {
+        min-height: 360px;
+    }
+
+    .browser-bar {
+        height: 36px;
+    }
+
+    .browser-bar small {
+        padding: 5px 18px;
+        font-size: 10px;
+    }
+
+    .website-preview {
+        top: 36px;
+        height: calc(100% - 36px);
+    }
+
+    .website-preview iframe {
+        width: 220%;
+        height: 220%;
+        transform: scale(0.4545);
+    }
+
+    .preview-badge {
+        left: 14px;
+        bottom: 14px;
+        font-size: 9px;
+    }
+}
